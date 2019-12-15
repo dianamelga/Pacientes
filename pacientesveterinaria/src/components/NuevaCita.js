@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import uuid from 'uuid';
+import PropTypes from 'prop-types';
 
 const stateInicial = {
     error: false,
@@ -16,7 +17,7 @@ class NuevaCita extends Component {
   state = { ...stateInicial };
 
   handleChange = e => {
-    console.log(e.target.name + ": " + e.target.value);
+    //console.log(e.target.name + ": " + e.target.value);
 
     //colocar lo que el usuario escribe en el state
     this.setState({
@@ -161,6 +162,10 @@ class NuevaCita extends Component {
       </div>
     );
   }
+}
+
+NuevaCita.propTypes = {
+    crearNuevaCita : PropTypes.func.isRequired
 }
 
 export default NuevaCita;
